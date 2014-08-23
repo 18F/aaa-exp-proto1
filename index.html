@@ -72,7 +72,7 @@
         alert("error"+error);
     }
 }).done(function( data ) {
-    person = JSON.parse(data);
+    var person = JSON.parse(data);
     $("#name").html(person.name);
     $("#rank").html(person.rank);
     $("#profession").html(person.profession);
