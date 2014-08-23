@@ -63,9 +63,8 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <script>
-    alert("spud!");
     $.ajax({
-     url: "file:///Users/robertread/projects/aaa-exp-proto1/travel.json",
+     url: "travel.json",
   context: document.body,
     error: function (request, status, error) {
         alert("response text"+request.responseText);
@@ -73,9 +72,7 @@
         alert("error"+error);
     }
 }).done(function( data ) {
-    alert("data"+data);
     person = JSON.parse(data);
-    alert("person"+person.rank);
     $("#name").html(person.name);
     $("#rank").html(person.rank);
     $("#profession").html(person.profession);
