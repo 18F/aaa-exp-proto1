@@ -64,7 +64,7 @@
 
 <script>
     $.ajax({
-     url: "./travel.json",
+     url: "travel.json",
   context: document.body,
     error: function (request, status, error) {
         alert("response text"+request.responseText);
@@ -72,6 +72,7 @@
         alert("error"+error);
     }
 }).done(function( data ) {
+    alert("data"+data);
     var person = JSON.parse(data);
     $("#name").html(person.name);
     $("#rank").html(person.rank);
