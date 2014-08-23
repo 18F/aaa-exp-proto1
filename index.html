@@ -65,15 +65,15 @@
 <script>
     $.ajax({
      url: "travel.json",
-  context: document.body,
+     context: document.body,
+     datatype: "json",
     error: function (request, status, error) {
         alert("response text"+request.responseText);
         alert("status"+status);
         alert("error"+error);
     }
 }).done(function( data ) {
-    alert("data"+data);
-    var person = JSON.parse(data);
+    person = data;
     $("#name").html(person.name);
     $("#rank").html(person.rank);
     $("#profession").html(person.profession);
