@@ -33,6 +33,9 @@
 	Let's put the prototyping below this line.
 
 	        <hr>
+	Person: <input type="text" name="person"><br>
+        <div id="search_button" type="button">Click here to Get Data</div>
+
 	<section id="personnel_summary">
 	<p>
 	Name: <span id="name"></span>
@@ -45,6 +48,25 @@
 	</p>
 	Others:
 	<p>
+	</p>
+	<div id="other"></div>
+	</section>
+
+	   <hr>
+	<section id="time_and_attendance">
+	<p>
+	Vacation: <span id="vacation"></span>
+	</p>
+	<div id="other"></div>
+	</section>
+
+	   <hr>
+	<section id="travel">
+	<p>
+	First Trip <span id="trip0"></span>
+	</p>
+	<p>
+	Second Trip <span id="trip1"></span>
 	</p>
 	<div id="other"></div>
 	</section>
@@ -63,7 +85,47 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <script>
+
+$(document).ready(function() {
+
+    alert("ready!");
+     $("search_button").click( function() {
+         alert("spud");
+    });
+});
+   
+    
+    
     $.ajax({
+     url: "official.json",
+     context: document.body,
+     datatype: "json",
+    error: function (request, status, error) {
+        alert("response text"+request.responseText);
+        alert("status"+status);
+        alert("error"+error);
+    }
+}).done(function( person ) {
+    $("#name").html(person.name);
+    $("#rank").html(person.rank);
+    $("#profession").html(person.profession);
+    
+});
+
+    $.ajax({
+     url: "time_and_attendance.json",
+     context: document.body,
+     datatype: "json",
+    error: function (request, status, error) {
+        alert("response text"+request.responseText);
+        alert("status"+status);
+        alert("error"+error);
+    }
+}).done(function( t_a) {
+    $("#vacation").html(t_a.vacation);
+});
+
+       $.ajax({
      url: "travel.json",
      context: document.body,
      datatype: "json",
@@ -72,10 +134,8 @@
         alert("status"+status);
         alert("error"+error);
     }
-}).done(function( data ) {
-    person = data;
-    $("#name").html(person.name);
-    $("#rank").html(person.rank);
-    $("#profession").html(person.profession);
+}).done(function( t_a) {
+    $("#trip0").html(JSON.stringify(t_a.trips[0]));
 });
-</script>
+
+    </script>

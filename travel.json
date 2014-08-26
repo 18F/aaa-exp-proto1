@@ -1,7 +1,6 @@
 { 
     "name": "Frodo",
-	"rank": "gs13",
-	"size": "small",
-	"profession": "hero"
+        "trips":[ { "vegas" : { "date" : "10/21/1964",
+			       "cost" : "400" }}]
 }
 
