@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('#tab-container').easytabs();
   load_data();
   
   $("#search_button").click( function() {
