@@ -1,6 +1,12 @@
+[{ 
+    "name": "Bilbo",
+        "trips":[ { "mistymountain" : { "date" : "10/21/1964",
+			       "cost" : "a handkerchief" }}]
+},
 { 
     "name": "Frodo",
-        "trips":[ { "vegas" : { "date" : "10/21/1964",
-			       "cost" : "400" }}]
+        "trips":[ { "mordor" : { "date" : "10/21/1964",
+			       "cost" : "a finger" }}]
 }
+]
 

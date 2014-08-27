@@ -1,8 +1,16 @@
-{ 
+[{ 
     "name": "Frodo",
 	"week0": "34",
 	"week1": "40",
         "vacation": "10"
     
-}
+},
+{ 
+    "name": "Bilbo",
+	"week0": "40",
+	"week1": "60",
+        "vacation": "111"
+    
+}]
+
 

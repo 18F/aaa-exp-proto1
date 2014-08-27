@@ -33,8 +33,8 @@
 	Let's put the prototyping below this line.
 
 	        <hr>
-	Person: <input type="text" name="person"><br>
-        <div id="search_button" type="button">Click here to Get Data</div>
+	Person: <input type="text" id="person" name="person"><br>
+        <input id="search_button" type="button">Click here to Get Data</input>
 
 	<section id="personnel_summary">
 	<p>
@@ -87,15 +87,20 @@
 <script>
 
 $(document).ready(function() {
-
-    alert("ready!");
-     $("search_button").click( function() {
-         alert("spud");
+     $("#search_button").click( function() {
+         var name = $("#person").val();
+         RenderPerson(name);
     });
 });
-   
-    
-    
+
+var personnel_db = [];
+var travel_db = [];
+var time_and_attendance_db = [];
+
+loadData();
+
+function loadData() {
+
     $.ajax({
      url: "official.json",
      context: document.body,
@@ -105,11 +110,8 @@ $(document).ready(function() {
         alert("status"+status);
         alert("error"+error);
     }
-}).done(function( person ) {
-    $("#name").html(person.name);
-    $("#rank").html(person.rank);
-    $("#profession").html(person.profession);
-    
+}).done(function( persons ) {
+    personnel_db = persons
 });
 
     $.ajax({
@@ -122,7 +124,7 @@ $(document).ready(function() {
         alert("error"+error);
     }
 }).done(function( t_a) {
-    $("#vacation").html(t_a.vacation);
+    time_and_attendance_db = t_a;
 });
 
        $.ajax({
@@ -134,8 +136,36 @@ $(document).ready(function() {
         alert("status"+status);
         alert("error"+error);
     }
-}).done(function( t_a) {
-    $("#trip0").html(JSON.stringify(t_a.trips[0]));
+}).done(function( travels) {
+    travel_db = travels;
 });
+    
+
+    }
+
+function find_named_object(name,array) {
+    var arrayLength = array.length;
+    for (var i = 0; i < arrayLength; i++) {
+         if (array[i].name === name) {
+             return array[i];
+         }
+    }
+    alert("whoa, can't find:"+name);
+    return null;
+}
+
+function RenderPerson(name) {
+    var person = find_named_object(name,personnel_db);
+    var travel = find_named_object(name,travel_db);
+    var t_a = find_named_object(name,time_and_attendance_db);
+
+        $("#name").html(person.name);
+    $("#rank").html(person.rank);
+    $("#profession").html(person.profession);
+
+    $("#vacation").html(t_a.vacation);
+        $("#trip0").html(JSON.stringify(travel.trips[0]));
+    }
+    
 
     </script>
