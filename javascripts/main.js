@@ -4,19 +4,8 @@ $(document).ready(function() {
   render_all();
 });
 
-var tabs = [
-  "chris",
-  "etams",
-  "par",
-  "pegasys"
-];
-
 var li = function(content) {
   return "<li>" + content + "</li>";
-};
-
-var p = function(content) {
-  return "<p>" + content + "</p>";
 };
 
 var get_value_from_types = function(key, callback) {
@@ -38,6 +27,7 @@ var render_all = function() {
   render_etams();
   render_par();
   render_pegasys();
+  render_dashboard();
 };
 
 var render = function(path, element) {
@@ -65,6 +55,27 @@ var render_par = function() {
 
 var render_pegasys = function() {
   render("data/pegasys.json", "#pegasys");
+};
+
+var strong = function(content) {
+  return "<strong>" + content + "</strong>";
+};
+
+var link = function(href, content) {
+  return "<a href=" + href + ">" + content + "</a>"
+};
+
+var render_dashboard = function() {
+  $.getJSON("data/dashboard.json", function(data) {
+    var type_pairs = data.types;
+    var content = _.map(type_pairs, function(my_type_pair) {
+      var my_type = my_type_pair[0];
+      var my_source = my_type_pair[1];
+      var my_value = get_value_from_types(my_type);
+      return li(strong(my_type)+": " + my_value + " (source: " + link("#", my_source) + ")");
+    }).join("");
+    $("#dashboard").html(content);
+  });
 };
 
 

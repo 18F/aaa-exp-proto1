@@ -1,6 +1,7 @@
 {
   "types": [
     "org_code",
+    "agency",
     "line_of_accounting",
     "pay_period",
     "accounting_period"

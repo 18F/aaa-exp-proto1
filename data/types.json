@@ -11,11 +11,13 @@
   "service_comp_date": "MM/DD/YYYY",
   "entered_on_date": "MM/DD/YYYY",
   "sep_date": "MM/DD/YYYY",
-  "grade": "13",
+  "grade": "14",
   "step": "01",
   "occupancy_code": "2210",
   "position_title": "IT Specialist",
   "tenure_descrip": "1/Career Appts",
   "type_of_appt_descrip": "1A/Competitive-Career",
-  "org_code": "FOOWB500"
+  "org_code": "FOOWB500",
+  "loe": "Sample LOE",
+  "last_payroll": "08/28/2014" 
 }
