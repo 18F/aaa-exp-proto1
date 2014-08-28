@@ -1,0 +1,23 @@
+{
+  "types": [
+    "agency",
+    "org_code",
+    "ssn",
+    "line_of_accounting",
+    "pay_period",
+    "pay_period_day",
+    "ta_code_descrip",
+    "ta_hours",
+    "accounting_period",
+    "annual_salary",
+    "service_comp_date",
+    "entered_on_date",
+    "sep_date",
+    "grade",
+    "step",
+    "occupancy_code",
+    "position_title",
+    "tenure_descrip",
+    "type_of_appt_descrip"
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  { 
+    "name": "Frodo",
+  	"rank": "gs13",
+  	"size": "small",
+  	"profession": "hero"
+  },
+  { 
+    "name": "Bilbo",
+  	"rank": "gs13",
+  	"size": "small",
+  	"profession": "burglar"
+  }
+]

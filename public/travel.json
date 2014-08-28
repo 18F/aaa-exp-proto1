@@ -1,0 +1,27 @@
+[
+  { 
+    "name": "Bilbo",
+    "trips":  [ 
+      { 
+        "mistymountain" : 
+          { 
+            "date" : "10/21/1964",
+			      "cost" : "a handkerchief" 
+          }
+        }
+      ]
+    },
+  { 
+    "name": "Frodo",
+    "trips":  [ 
+      { 
+        "mordor" : 
+          { 
+            "date" : "10/21/1964",
+			      "cost" : "a finger" 
+          }
+      }
+    ]
+  }
+]
+

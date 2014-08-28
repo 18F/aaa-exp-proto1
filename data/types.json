@@ -1,0 +1,23 @@
+{
+  "agency": "GS",
+  "ssn": "999-99-9999",
+  "line_of_accounting": "262 S00WB500 D1 11 O40",
+  "pay_period": "Varies by system",
+  "pay_period_day": "02",
+  "ta_code_descrip": "01/Reg Hours",
+  "ta_hours": "8",
+  "accounting_period": "01/2014",
+  "annual_salary": "99,999.00",
+  "service_comp_date": "MM/DD/YYYY",
+  "entered_on_date": "MM/DD/YYYY",
+  "sep_date": "MM/DD/YYYY",
+  "grade": "14",
+  "step": "01",
+  "occupancy_code": "2210",
+  "position_title": "IT Specialist",
+  "tenure_descrip": "1/Career Appts",
+  "type_of_appt_descrip": "1A/Competitive-Career",
+  "org_code": "FOOWB500",
+  "loe": "Sample LOE",
+  "last_payroll": "08/28/2014" 
+}
