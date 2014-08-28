@@ -8,7 +8,6 @@ $(document).ready(function() {
   });
 });
 
-# These are effectively databases
 var personnel_db = [];
 var travel_db = [];
 var time_and_attendance_db = [];
