@@ -1,0 +1,10 @@
+{
+  "types": [
+    ["grade", "CHRIS"],
+    ["position_title", "PAR"],
+    ["salary", "CHRIS"],
+    ["loe", "ETAMS"],
+    ["last_payroll", "pegasys"],
+    ["ta_hours", "ETAMS"]
+  ]
+}

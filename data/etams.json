@@ -1,0 +1,10 @@
+{
+  "types": [
+    "agency",
+    "ssn",
+    "pay_period",
+    "pay_period_day",
+    "ta_code_descrip",
+    "ta_hours"
+  ]
+}
