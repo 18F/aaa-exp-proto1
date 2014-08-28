@@ -1,0 +1,8 @@
+{
+  "types": [
+    "org_code",
+    "line_of_accounting",
+    "pay_period",
+    "accounting_period"
+  ]
+}

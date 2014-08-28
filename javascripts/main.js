@@ -1,81 +1,76 @@
 $(document).ready(function() {
   $('#tab-container').easytabs();
-  load_data();
   
-  $("#search_button").click( function() {
-    var name = $("#person").val();
-    render_person(name);
-  });
+  render_all();
 });
 
-var personnel_db = [];
-var travel_db = [];
-var time_and_attendance_db = [];
+var tabs = [
+  "chris",
+  "etams",
+  "par",
+  "pegasys"
+];
 
-var load_data = function() {
+var li = function(content) {
+  return "<li>" + content + "</li>";
+};
 
-  $.ajax({
-    url: "official.json",
-    context: document.body,
-    datatype: "json",
-    error: function(request, status, error) {
-      alert("response text"+request.responseText);
-      alert("status"+status);
-      alert("error"+error);
-    }
-  }).done(function(persons) {
-    personnel_db = persons;
-  });
+var p = function(content) {
+  return "<p>" + content + "</p>";
+};
+
+var get_value_from_types = function(key, callback) {
+  var value = "";
   
   $.ajax({
-    url: "time_and_attendance.json",
-    context: document.body,
-    datatype: "json",
-    error: function (request, status, error) {
-      alert("response text"+request.responseText);
-      alert("status"+status);
-      alert("error"+error);
+    url: "data/types.json",
+    async: false,
+    success: function(res) {
+      value = res[key];
     }
-  }).done(function(t_a) {
-    time_and_attendance_db = t_a;
   });
+  
+  return value;
+};
 
-  $.ajax({
-    url: "travel.json",
-    context: document.body,
-    datatype: "json",
-    error: function (request, status, error) {
-      alert("response text"+request.responseText);
-      alert("status"+status);
-      alert("error"+error);
-    }
-  }).done(function( travels) {
-    travel_db = travels;
+var render_all = function() {
+  render_chris();
+  render_etams();
+  render_par();
+  render_pegasys();
+};
+
+var render = function(path, element) {
+  $.getJSON(path, function(data) {
+    var types = data.types;
+    var content = _.map(types, function(my_type) {
+      var my_value = get_value_from_types(my_type);
+      return li(my_type+": " + my_value);
+    }).join("");
+    $(element).html(content);
   });
-
 };
 
-var find_named_object = function(name,array) {
-  var array_length = array.length;
-  for (var i = 0; i < array_length; i++) {
-    if (array[i].name === name) {
-       return array[i];
-    }
-  }
-  alert("whoa, can't find:"+name);
-  return null;
+var render_chris = function() {
+  render("data/chris.json", "#chris");
 };
 
-var render_person = function(name) {
-  var person = find_named_object(name, personnel_db);
-  var travel = find_named_object(name, travel_db);
-  var t_a = find_named_object(name, time_and_attendance_db);
-
-  $("#name").html(person.name);
-  $("#rank").html(person.rank);
-  $("#profession").html(person.profession);
-
-  $("#vacation").html(t_a.vacation);
-  $("#trip0").html(JSON.stringify(travel.trips[0]));
+var render_etams = function() {
+  render("data/etams.json", "#etams");
 };
+
+var render_par = function() {
+  render("data/par.json", "#par");
+};
+
+var render_pegasys = function() {
+  render("data/pegasys.json", "#pegasys");
+};
+
+
+
+
+
+
+
     

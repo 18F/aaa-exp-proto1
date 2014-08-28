@@ -20,23 +20,52 @@
           <h2>This is an experimental repository to prototype some Ajax and GUI ideas</h2>
         </header>
         <hr>
-        <section id="main_content">          
+        <section id="main_content">
+          <h3>This is very basic site for the prototyping some work,
+            especially some AJAX calls.
+          </h3>
+          
+          
+          <h3>Person: <input type="text" id="person" name="person"></h3>
+          <input id="search_button" type="button" value="Search" />
+          <br />
+          <br />
+          
           <div id="tab-container" class="tab-container">
-            <ul id="tabs" class='etabs'>
-              <li class='tab'><a href="#chris">CHRIS</a></li>
-              <li class='tab'><a href="#etams">ETAMS</a></li>
-              <li class='tab'><a href="#par">PAR</a></li>
-              <li class='tab'><a href="#pegasys">Pegasys</a></li>
+            <ul class='etabs'>
+              <li class='tab'><a href="#hr">HR</a></li>
+              <li class='tab'><a href="#ta">Time &amp; Attendance</a></li>
+              <li class='tab'><a href="#travel">Travel</a></li>
             </ul>
-            <div id="chris">
-              <div id="chriscontent">
-              </div>
+            <div id="hr">
+                <p>
+                  Name: <span id="name"></span>
+                </p>
+                <p>	
+                  Rank: <span id="rank"></span>
+                </p>
+                <p>
+                  Profession: <span id="profession"></span>
+                </p>
+                Others:
+                <p>
+                </p>
+                <div id="other"></div>
             </div>
-            <div id="etams">
+            <div id="ta">
+                <p>
+                  Vacation: <span id="vacation"></span>
+                </p>
+                <div id="other"></div>
             </div>
-            <div id="par">
-            </div>
-            <div id="pegasys">
+            <div id="travel">
+                <p>
+                  First Trip <span id="trip0"></span>
+                </p>
+                <p>
+                  Second Trip <span id="trip1"></span>
+                </p>
+                <div id="other"></div>
             </div>
           </div>
         </section>
